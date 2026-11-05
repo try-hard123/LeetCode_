@@ -9,10 +9,10 @@ public:
         for(int i = 0; i < arr1.size(); i++){
             int case1 = arr1[i] - d;
             int case2 = arr1[i] + d;
-                        
-            auto it = lower_bound(arr2.begin(), arr2.end(), case1);
 
-            if(it == arr2.end() || *it > case2) cnt++;
+            auto it1 = lower_bound(arr2.begin(), arr2.end(), case1);
+
+            if(it1 == arr2.end() || *it1 > case2) cnt++;
         }
         return cnt;
     }
