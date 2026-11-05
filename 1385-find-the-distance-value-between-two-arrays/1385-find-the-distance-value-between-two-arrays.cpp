@@ -9,16 +9,10 @@ public:
         for(int i = 0; i < arr1.size(); i++){
             int case1 = arr1[i] - d;
             int case2 = arr1[i] + d;
-            bool check = false;
+                        
+            auto it = lower_bound(arr2.begin(), arr2.end(), case1);
 
-            for(int i = 0; i < arr2.size(); i++){
-                if(arr2[i] >= case1 && arr2[i] <= case2){
-                    check = true;
-                    break;
-                }
-            }
-
-            if(!check) cnt++;
+            if(it == arr2.end() || *it > case2) cnt++;
         }
         return cnt;
     }
